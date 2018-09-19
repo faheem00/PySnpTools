@@ -1,7 +1,7 @@
 import numpy as np
 import subprocess, sys, os.path
 from itertools import *
-import pandas as pd
+import dask.dataframe as pd
 import logging
 from kernelreader import KernelReader
 from pysnptools.pstreader import PstData

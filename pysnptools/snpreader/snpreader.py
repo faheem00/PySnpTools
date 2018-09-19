@@ -2,7 +2,7 @@ import numpy as np
 import subprocess, sys
 import os.path
 from itertools import *
-import pandas as pd
+import dask.dataframe as pd
 import logging
 import time
 import pysnptools.util as pstutil

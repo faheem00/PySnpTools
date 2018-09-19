@@ -125,7 +125,7 @@ setup(
         "tests/datasets/all_chr.maf0.001.covariates.N300.txt"
         ]
                  },
-    install_requires = ['scipy>=0.15.1', 'numpy>=1.9.2', 'pandas>=0.16.2'],
+    install_requires = ['scipy>=0.15.1', 'numpy>=1.9.2', 'pandas>=0.16.2', 'dask[dataframe]>=0.19.2'],
 
     # extensions
     cmdclass = cmdclass,

@@ -1,7 +1,7 @@
 import numpy as np
 import subprocess, sys, os.path
 from itertools import *
-import pandas as pd
+import dask.dataframe as pd
 import logging
 from snpreader import SnpReader
 from pysnptools.standardizer import Unit
