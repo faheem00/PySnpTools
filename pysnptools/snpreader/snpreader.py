@@ -671,9 +671,10 @@ class SnpReader(PstReader):
             pos = np.array([[]],dtype=int).reshape(0,3)
             return sid,pos
         else:
-            fields = pd.read_csv(mapfile,delimiter = '\t',usecols = (0,1,2,3),header=None,comment=None).set_index(False)
-            sid = np.array(fields[1].tolist(),dtype='str')
-            pos = fields.as_matrix([0,2,3])
+            fields = pd.read_csv(mapfile, delimiter='\t', usecols=(
+                0, 1, 2, 3), header=None, comment=None)
+            sid = np.array(fields[1].values,dtype='str')
+            pos = fields[[0, 2, 3]].to_dask_array(True)
             return sid,pos
 
 
