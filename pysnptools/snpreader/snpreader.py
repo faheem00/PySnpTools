@@ -671,7 +671,7 @@ class SnpReader(PstReader):
             pos = np.array([[]],dtype=int).reshape(0,3)
             return sid,pos
         else:
-            fields = pd.read_csv(mapfile,delimiter = '\t',usecols = (0,1,2,3),header=None,index_col=False,comment=None)
+            fields = pd.read_csv(mapfile,delimiter = '\t',usecols = (0,1,2,3),header=None,comment=None).set_index(False)
             sid = np.array(fields[1].tolist(),dtype='str')
             pos = fields.as_matrix([0,2,3])
             return sid,pos

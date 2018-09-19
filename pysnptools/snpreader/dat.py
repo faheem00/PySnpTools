@@ -48,7 +48,7 @@ class Dat(_OneShot,SnpReader):
         col, col_property = SnpReader._read_map_or_bim(self.filename,remove_suffix="dat", add_suffix="map")
         if len(row)==0 or len(col)==0:
             return SnpData(iid=row,sid=col,pos=col_property,val=np.empty([len(row),len(col)]))
-        datfields = pd.read_csv(self.filename,delimiter = '\t',header=None,index_col=False)
+        datfields = pd.read_csv(self.filename,delimiter = '\t',header=None).set_index(False)
         if not np.array_equal(np.array(datfields[0],dtype="string"), col) : raise Exception("Expect snp list in map file to exactly match snp list in dat file")
         del datfields[0]
         del datfields[1]
